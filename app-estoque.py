@@ -1,4 +1,4 @@
-# https://www.onlinegdb.com/fork/EXaaeThoK#editor_1📚 Importa as bibliotecas necessárias
+# 📚 Importa as bibliotecas necessárias
 import json       # Manipulação de dados em formato JSON
 import sqlite3    # Conexão e operações com banco de dados SQLite
 import os         # Verificação e remoção de arquivos
@@ -95,4 +95,13 @@ produtos = [
 # ➕ Adiciona novos produtos à lista existente
 produtos.append(Produto(4, "Marcador", "Papelaria", 80, 4.75, "Pilot"))
 produtos.append(Produto(5, "Grampeador", "Escritório", 30, 22.40, "Tramontina"))
+# ➕ Adiciona novos produtos à lista existente
+produtos.append(Produto(4, "Marcador", "Papelaria", 80, 4.75, "Pilot"))
+produtos.append(Produto(5, "Grampeador", "Escritório", 30, 22.40, "Tramontina"))
 
+# 🔎 Função para listar produtos com preço acima de R$10
+def listar_produtos_acima_de_10():
+    print("\n💰 Produtos com preço acima de R$10:")
+    for p in produtos:
+        if p.preco > 10:
+            print(p)
