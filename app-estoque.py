@@ -105,3 +105,10 @@ def listar_produtos_acima_de_10():
     for p in produtos:
         if p.preco > 10:
             print(p)
+# 🔧 Função para alterar o preço de um produto pelo nome
+def alterar_preco(nome_produto, novo_preco):
+    for p in produtos:
+        if p.nome == nome_produto:
+            p.preco = novo_preco
+            return f"✅ Preço do produto '{nome_produto}' atualizado para R${novo_preco:.2f}"
+    return f"❌ Produto '{nome_produto}' não encontrado."
