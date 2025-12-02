@@ -18,8 +18,17 @@ cliente = json.loads(dados_json)
 # Exibe o nome e o ID do cliente formatado
 print(f"Cliente: {cliente['nome']} (ID: {cliente['id']})")
 
+# Inicializa variáveis para total gasto
+total_gasto = 0
+
 # Exibe os pagamentos realizados pelo cliente
 print("Pagamentos:")
 for pagamento in cliente["pagamentos"]:
-    # Para cada pagamento, imprime a descrição e o valor
-    print(f" - {pagamento['descricao']}: R$ {pagamento['valor']}")
+    valor = pagamento["valor"]
+    comissao = valor * 0.05  # 5% de comissão
+    total_gasto += valor
+    print(f" - {pagamento['descricao']}: R$ {valor:.2f} | Comissão: R$ {comissao:.2f}")
+
+# Exibe o total gasto
+print(f"\nTotal gasto pelo cliente: R$ {total_gasto:.2f}")
+
